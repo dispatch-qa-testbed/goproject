@@ -1,0 +1,10 @@
+[
+  {"id": "a1", "name": "Alpha", "qty": 12},
+  {"id": "b2", "name": "Bravo", "qty": 7},
+  {"id": "c3", "name": "Charlie", "qty": 40},
+  {"id": "d4", "name": "Delta", "qty": 3},
+  {"id": "e5", "name": "Echo", "qty": 18},
+  {"id": "f6", "name": "Foxtrot", "qty": 25},
+  {"id": "g7", "name": "Golf", "qty": 9},
+  {"id": "h8", "name": "Hotel", "qty": 31}
+]
