@@ -6,11 +6,16 @@ Run from the repository root:
 
     python3 gen/gen_index.py
 
+Pass --prune to additionally remove the retired legacy_index.go table:
+
+    python3 gen/gen_index.py --prune
+
 item_index.go is overwritten in full; never edit it by hand.
 """
 
 import json
 import pathlib
+import sys
 
 FNV_OFFSET = 14695981039346656037
 FNV_PRIME = 1099511628211
@@ -46,6 +51,14 @@ def main():
 
     (root / "item_index.go").write_text("".join(lines))
     print("wrote item_index.go with {} entries".format(len(items)))
+
+    if "--prune" in sys.argv[1:]:
+        legacy = root / "legacy_index.go"
+        if legacy.exists():
+            legacy.unlink()
+            print("pruned legacy_index.go")
+        else:
+            print("legacy_index.go already absent, nothing to prune")
 
 
 if __name__ == "__main__":
