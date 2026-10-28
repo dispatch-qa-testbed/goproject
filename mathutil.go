@@ -24,3 +24,11 @@ func Average(xs []int) int {
 	}
 	return sum / len(xs)
 }
+
+// Max returns the larger of a and b.
+func Max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return a
+}
